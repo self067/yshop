@@ -10,6 +10,7 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+      '@aa'   => 'web/site/hello',
     ],
     'components' => [
         'request' => [
