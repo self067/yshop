@@ -3,7 +3,7 @@ IndexIgnore */*
 RewriteEngine on
 
 RewriteCond %{REQUEST_URI} !^/(web)
-RewriteRule ^assets/(.*)$ /web/assets/$1 [L]
+RewriteRule ^assets/(.*)$ web/assets/$1 [L]
 RewriteRule ^css/(.*)$ web/css/$1 [L]
 RewriteRule ^fonts/(.*)$ web/fonts/$1 [L]
 RewriteRule ^js/(.*)$ web/js/$1 [L]

@@ -25,7 +25,36 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+
+<section class="body">
+    <header>
+        <div class="container">
+            <div class="header">
+                <a href="index.html">На главную</a>
+                <a href="#">Вход в админку</a>
+                <a href="#">Корзина</a>
+                <input type="text" style="padding: 5px" placeholder="Поиск..." name="search">
+            </div>
+        </div>
+    </header>
+
+
+<div class="container">
+
         <?= $content ?>
+</div>
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                &copy; Все права защищены или типа того
+            </div>
+        </div>
+    </footer>
+</section>
+
+
+
 
 <?php $this->endBody() ?>
 </body>
