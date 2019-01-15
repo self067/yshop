@@ -54,7 +54,7 @@ $config = [
               '<cat>' => 'category/view',
               '<search>' => 'category/search',
 //              'yshop/all/page/<page>' => 'yshop/default/all',
-//              'yshop/all' => 'yshop/default/all',
+//              '/' => 'yshop/web',
 //            '' => 'site/index',
 //            '<_a:[\w-]+>' => 'site/<_a>',
             ],
