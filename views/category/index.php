@@ -4,7 +4,7 @@
     <div class="row">
 
       <?php foreach( $goods as $good) { ?>
-        <div class="col-4">
+        <div class="col-6 col-md-4">
             <div class="product">
                 <div class="product-img">
                     <img src="img/<?=$good['img']?>" alt="<?=$good['name']?>">
