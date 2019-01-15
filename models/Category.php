@@ -10,6 +10,7 @@ namespace app\models;
 
 
 use yii\db\ActiveRecord;
+use yii;
 
 class Category extends ActiveRecord
 {
@@ -17,7 +18,17 @@ class Category extends ActiveRecord
   {
     return 'category';
   }
+
   public function getCategories() {
-    return Category::find()->asArray()->all();
+
+    $categories = Yii::$app->cache->get('categories');
+    if(!$categories) {
+      $categories = Category::find()->asArray()->all();
+      Yii::$app->cache->set('categories', $categories, 120);
+    }
+
+    return $categories;
+
+//    return Category::find()->asArray()->all();
   }
 }
