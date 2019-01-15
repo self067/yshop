@@ -70,6 +70,10 @@ body {
     justify-content: space-around;
 }
 
+.product-descr {
+    min-height: 50px;
+}
+
 
 footer,
 header {
@@ -98,4 +102,14 @@ header {
 
 .header {
     justify-content: space-around;
+}
+
+@media screen  and (max-width: 992px) {
+button.btn {
+    font-size: 0.7rem;
+}
+.product-descr {
+    font-size: 0.9em;
+}
+
 }
