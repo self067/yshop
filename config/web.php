@@ -51,12 +51,14 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
 //            'enableStrictParsing' => true,
-//            'rules' => [
+            'rules' => [
+              'category/<id>' => 'category/view',
+//              'category/<id>' => 'category/search',
 //              'yshop/all/page/<page>' => 'yshop/default/all',
 //              'yshop/all' => 'yshop/default/all',
 //            '' => 'site/index',
 //            '<_a:[\w-]+>' => 'site/<_a>',
-//            ],
+            ],
         ],
     ],
     'params' => $params,
