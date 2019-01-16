@@ -2,7 +2,7 @@
 function openCart(event) {
   event.preventDefault();
   $.ajax({
-    url: 'cart/open',
+    url: '/yshop/cart/open',
     type: 'GET',
     success: function(res) {
       alert(res);
@@ -27,7 +27,7 @@ $('.product-button__add').on('click', function (event) {
   console.log(name);
 //
   $.ajax({
-    url: '/cart/add',
+    url: 'cart/add',
     data: {name: name},
     type: 'GET',
     success: function(res) {

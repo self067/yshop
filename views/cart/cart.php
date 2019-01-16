@@ -42,8 +42,7 @@ if($session['cart']) {
 
 
 <?php } else{ ?>
-
 <h3>Ваша корзина пуста </h3>
-<button type=" button" class="btn btn-secondary">Начать покупки</button>
+<button type="button" class="btn btn-secondary">Начать покупки</button>
 <?php
 }
