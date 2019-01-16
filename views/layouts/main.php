@@ -33,7 +33,7 @@ AppAsset::register($this);
             <div class="header">
                 <a href="/yshop">На главную</a>
                 <a href="#">Вход в админку</a>
-                <a href="#" class="cart">Корзина</a>
+                <a href="#" class="cart" onclick="openCart(event)">Корзина</a>
                 <form action="<?=Url::to(['category/search'])?>" method="get">
                     <input type="text" style="padding: 5px" placeholder="Поиск..." name="search">
                 </form>
@@ -60,8 +60,7 @@ AppAsset::register($this);
 <div id="cart" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
-xbtbwtsbt
-rfwefwfw4fw
+	<h2>Корзина пуста</h2>
     </div>
   </div>
 </div>
