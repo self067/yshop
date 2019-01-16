@@ -51,8 +51,10 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-              '<cat>' => 'category/view',
-              'search/<search>' => 'category/search',
+              'category/<cat>' => 'category/view',
+              'search' => 'category/search',
+              'good/<name>' => 'good/index',
+
 //              'yshop/all/page/<page>' => 'yshop/default/all',
 //              '/' => 'yshop/web',
 //            '' => 'site/index',
