@@ -23,6 +23,7 @@ class Cart extends ActiveRecord
         'img' => $good['img'],
     ];
     }
+
     $_SESSION['cart.totalQuantity'] = isset($_SESSION['cart.totalQuantity'])?
       $_SESSION['cart.totalQuantity']+1:1;
     $_SESSION['cart.totalSum'] = isset($_SESSION['cart.totalSum'])?

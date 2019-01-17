@@ -6,12 +6,12 @@ use yii\widgets\ActiveForm;
 
 <?php $form = ActiveForm::begin()?>
 
-<?php $form->field($order, 'name')?>
-<?php $form->field($order, 'email')?>
-<?php $form->field($order, 'phone')?>
-<?php $form->field($order, 'addres')?>
+<?= $form->field($order, 'name')?>
+<?= $form->field($order, 'email')?>
+<?= $form->field($order, 'phone')?>
+<?= $form->field($order, 'addres')?>
 
 <button class="btn btn-success">Оформить заказ</button>
 
 
-<?php $form = ActiveForm::end()?>
+<?php ActiveForm::end()?>

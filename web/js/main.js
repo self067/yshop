@@ -8,16 +8,11 @@ $('.modal-content').on('click', '.btn-next', function () {
       $('#order .modal-content').html(res);
       $('#cart').modal('hide');
       $('#order').modal('show');
-
-
     },
     error: function (xhr, ajaxOptions, thrownError) {
       alert(xhr.status +" "+thrownError);
-
     }
   });
-
-
 });
 
 

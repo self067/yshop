@@ -1,13 +1,9 @@
 <h2 style="padding: 10px; text-align: center">Корзина</h2>
 
 <?php
-//use Yii;
-
-//$this->pageTitle=Yii::app()->name . ' Корзина ' . $model->name;
 $this->title = 'Корзина ';
-
-if($session['cart']) {
-
+//if(is_array($session['cart'])) {
+  if(is_array($session['cart'])) {
 ?>
 <table class="table table-striped">
     <thead>
@@ -20,7 +16,9 @@ if($session['cart']) {
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($session['cart'] as $id => $good) { ?>
+    <?php
+        foreach( $session['cart'] as $id => $good) {
+        ?>
         <tr>
             <td style="vertical-align: middle" width="150"><img src="/yshop/img/<?=$good['img']?>" alt="<?=$good['name']?>"</td>
             <td style="vertical-align: middle"><?=$good['name']?></td>
@@ -28,7 +26,8 @@ if($session['cart']) {
             <td style="vertical-align: middle; text-align: right;"><?=number_format($good['price']*$good['goodQuantity'])?></td>
             <td class="delete" data-id="<?=$id?>" style="text-align: center; cursor: pointer; vertical-align: middle; color: red"><span>&#10006;</span></td>
         </tr>
-    <?php } ?>
+        <?php } ?>
+
     <tr style="border-top: 4px solid black">
         <td colspan="4">Всего товаров</td>
         <td class="total-quantity text-align-right"><?=$session['cart.totalQuantity']?></td>
@@ -39,9 +38,10 @@ if($session['cart']) {
     </tr>
     </tbody>
 </table>
+
 <div class="modal-buttons" style="display: flex; padding: 15px; justify-content: space-around">
     <button type="button" class="btn btn-danger" onclick="clearCart(event)">Очистить корзину</button>
-    <button type=" button" class="btn btn-secondary btn-close">Продолжить
+    <button type="button" class="btn btn-secondary btn-close">Продолжить
         покупки</button>
     <button type="button" class="btn btn-success btn-next">Оформить заказ</button>
 </div>
