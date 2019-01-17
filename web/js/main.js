@@ -1,5 +1,5 @@
+
 $('.modal-content').on('click', '.btn-next', function () {
-alert('Success');
   $.ajax({
     url: '/yshop/cart/order',
     type: 'GET',

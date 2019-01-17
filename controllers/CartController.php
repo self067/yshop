@@ -10,16 +10,19 @@ namespace app\controllers;
 use app\models\Good;
 use app\models\Cart;
 use Yii;
+use app\models\OrderGood;
+use app\models\Order;
 use yii\web\Controller;
 
 class CartController extends Controller
 {
 
-  public function actionOrder($id) {
+  public function actionOrder() {
     $session = Yii::$app->session;
     $session->open();
-
-    return $this->renderPartial('order', compact('session'));
+    $order = new Order();
+    $this->layout = 'empty-layout';
+    return $this->render('order', compact('session', 'order'));
   }
 
 
