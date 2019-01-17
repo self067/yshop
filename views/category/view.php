@@ -1,6 +1,9 @@
 <?=\app\widgets\MenuWidget::widget()?>
 <?php use yii\helpers\Url;
-$this->title = Yii::$app->name . ' товары ' . $model->name;
+$this->title = ' Товары категории ' . $goods[0]['category'];
+
+//var_dump($goods);
+//var_dump($categories);
 ?>
 
 <div class="container">
