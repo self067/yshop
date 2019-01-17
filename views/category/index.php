@@ -1,5 +1,8 @@
 <?=\app\widgets\MenuWidget::widget()?>
-<?php use yii\helpers\Url;?>
+<?php use yii\helpers\Url;
+$this->title = Yii::$app->name . ' Магазин ' . $model->name;
+
+?>
 
 <div class="container">
     <div class="row">

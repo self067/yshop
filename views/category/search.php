@@ -1,4 +1,7 @@
-<?php use yii\helpers\Url;?>
+<?php
+use yii\helpers\Url;
+$this->title = Yii::$app->name . ' Поиск ' . $model->name;
+?>
 
 <div class="container">
 

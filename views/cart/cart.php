@@ -1,5 +1,11 @@
 <h2 style="padding: 10px; text-align: center">Корзина</h2>
+
 <?php
+//use Yii;
+
+//$this->pageTitle=Yii::app()->name . ' Корзина ' . $model->name;
+$this->title = 'Корзина ';
+
 if($session['cart']) {
 
 ?>
@@ -19,17 +25,17 @@ if($session['cart']) {
             <td style="vertical-align: middle" width="150"><img src="/yshop/img/<?=$good['img']?>" alt="<?=$good['name']?>"</td>
             <td style="vertical-align: middle"><?=$good['name']?></td>
             <td style="vertical-align: middle"><?=$good['goodQuantity']?></td>
-            <td style="vertical-align: middle"><?=$good['price']?>*<?=$good['goodQuantity']?></td>
+            <td style="vertical-align: middle; text-align: right;"><?=number_format($good['price']*$good['goodQuantity'])?></td>
             <td class="delete" style="text-align: center; cursor: pointer; vertical-align: middle; color: red"><span>&#10006;</span></td>
         </tr>
     <?php } ?>
     <tr style="border-top: 4px solid black">
         <td colspan="4">Всего товаров</td>
-        <td class="total-quantity"><?=$session['cart.TotalQuantity']?></td>
+        <td class="total-quantity text-align-right"><?=$session['cart.totalQuantity']?></td>
     </tr>
     <tr>
         <td colspan="4">На сумму </td>
-        <td style="font-weight: 700"><?=$session['cart.TotalSum']?></td>
+        <td style="font-weight: 700;"><?=$session['cart.totalSum']?></td>
     </tr>
     </tbody>
 </table>

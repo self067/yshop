@@ -20,7 +20,9 @@ class CartController extends Controller
 //    $session->remove('cart');
 //    $session->remove('cart.totalSum');
 //    $session->remove('cart.totalQuantity');
+
     return $this->renderPartial('cart', compact('good', 'session'));
+//    return $this->renderPartial('cart', compact('good'));
 
   }
   public function actionAdd($name) {

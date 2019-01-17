@@ -1,11 +1,12 @@
 
 function openCart(event) {
   event.preventDefault();
+
   $.ajax({
     url: '/yshop/cart/open',
     type: 'GET',
     success: function(res) {
-      alert(res);
+      // alert(res);
       $('#cart .modal-content').html(res);
       $('#cart').modal('show');
     },
@@ -27,7 +28,7 @@ $('.product-button__add').on('click', function (event) {
   console.log(name);
 //
   $.ajax({
-    url: 'cart/add',
+    url: '/yshop/cart/add',
     data: {name: name},
     type: 'GET',
     success: function(res) {
