@@ -1,0 +1,1 @@
+<h2 style="padding: 10px; text-align: center">Оформление заказа</h2>

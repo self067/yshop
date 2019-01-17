@@ -1,3 +1,25 @@
+$('.modal-content').on('click', '.btn-next', function () {
+alert('Success');
+  $.ajax({
+    url: '/yshop/cart/order',
+    type: 'GET',
+    success: function(res) {
+      // alert('Success');
+      $('#order .modal-content').html(res);
+      $('#cart').modal('hide');
+      $('#order').modal('show');
+
+
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+      alert(xhr.status +" "+thrownError);
+
+    }
+  });
+
+
+});
+
 
 function openCart(event) {
   event.preventDefault();
@@ -34,6 +56,7 @@ $('.product-button__add').on('click', function (event) {
     success: function(res) {
       // alert('Success');
       $('#cart .modal-content').html(res);
+      $('.menu-quantity').html('('+$('.total-quantity').html()+')');
     },
     error: function (xhr, ajaxOptions, thrownError) {
         alert(xhr.status +" "+thrownError);
@@ -41,3 +64,53 @@ $('.product-button__add').on('click', function (event) {
     }
   });
 } );
+
+$('.modal-content').on('click', '.btn-close', function () {
+  $('#cart').modal('hide');
+})
+
+
+$('.modal-content').on('click', '.delete', function () {
+  let id = $(this).data('id');
+  $.ajax({
+    url: '/yshop/cart/delete',
+    data: {id: id},
+    type: 'GET',
+    success: function(res) {
+      // alert('Success');
+      $('#cart .modal-content').html(res);
+      if($('.total-quantity').html())
+        $('.menu-quantity').html('('+$('.total-quantity').html()+')');
+      else
+        $('.menu-quantity').html('(0)');
+
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+      alert(xhr.status +" "+thrownError);
+
+    }
+  });
+
+})
+
+
+function clearCart(event) {
+  event.preventDefault();
+  if(confirm('Очистить корзину ?')) {
+
+  $.ajax({
+    url: '/yshop/cart/clear',
+    type: 'GET',
+    success: function(res) {
+      $('#cart .modal-content').html(res);
+      $('.menu-quantity').html('(0)');
+
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+      alert(xhr.status +" "+thrownError);
+    }
+  });
+
+}
+
+}

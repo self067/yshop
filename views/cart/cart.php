@@ -26,7 +26,7 @@ if($session['cart']) {
             <td style="vertical-align: middle"><?=$good['name']?></td>
             <td style="vertical-align: middle"><?=$good['goodQuantity']?></td>
             <td style="vertical-align: middle; text-align: right;"><?=number_format($good['price']*$good['goodQuantity'])?></td>
-            <td class="delete" style="text-align: center; cursor: pointer; vertical-align: middle; color: red"><span>&#10006;</span></td>
+            <td class="delete" data-id="<?=$id?>" style="text-align: center; cursor: pointer; vertical-align: middle; color: red"><span>&#10006;</span></td>
         </tr>
     <?php } ?>
     <tr style="border-top: 4px solid black">
@@ -40,8 +40,8 @@ if($session['cart']) {
     </tbody>
 </table>
 <div class="modal-buttons" style="display: flex; padding: 15px; justify-content: space-around">
-    <button type="button" class="btn btn-danger"">Очистить корзину</button>
-    <button type=" button" class="btn btn-secondary">Продолжить
+    <button type="button" class="btn btn-danger" onclick="clearCart(event)">Очистить корзину</button>
+    <button type=" button" class="btn btn-secondary btn-close">Продолжить
         покупки</button>
     <button type="button" class="btn btn-success btn-next">Оформить заказ</button>
 </div>
@@ -49,6 +49,6 @@ if($session['cart']) {
 
 <?php } else{ ?>
 <h3>Ваша корзина пуста </h3>
-<button type="button" class="btn btn-secondary">Начать покупки</button>
+<button type="button" class="btn btn-secondary btn-close" style="width: 200px;">Начать покупки</button>
 <?php
 }

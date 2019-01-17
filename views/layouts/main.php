@@ -33,7 +33,7 @@ AppAsset::register($this);
             <div class="header">
                 <a href="/yshop">На главную</a>
                 <a href="#">Вход в админку</a>
-                <a href="#" class="cart" onclick="openCart(event)">Корзина</a>
+                <a href="#" class="cart" onclick="openCart(event)">Корзина <span class="menu-quantity">(<?=$_SESSION['cart.totalQuantity'] ? $_SESSION['cart.totalQuantity'] : 0?>)</span></a>
                 <form action="<?=Url::to(['category/search'])?>" method="get">
                     <input type="text" style="padding: 5px" placeholder="Поиск..." name="search">
                 </form>
@@ -59,8 +59,16 @@ AppAsset::register($this);
 
 <div id="cart" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
-    <div class="modal-content">
+    <div style="padding: 15px;" class="modal-content">
 	<h2>Корзина пуста</h2>
+    </div>
+  </div>
+</div>
+
+<div id="order" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div style="padding: 15px;" class="modal-content">
+
     </div>
   </div>
 </div>
