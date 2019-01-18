@@ -22,7 +22,7 @@ class CartController extends Controller
     $session->open();
     $order = new Order();
     if( $order->load(Yii::$app->request->post())){
-      $order-date = date('Y-m-d H:i:s');
+      $order->date = date('Y-m-d H:i:s');
       $order->sum = $session['cart.totalSum'];
       if($order->save()) {
         Yii::$app->mailer->compose()
